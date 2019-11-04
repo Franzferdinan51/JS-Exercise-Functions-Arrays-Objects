@@ -60,9 +60,12 @@ function makePersonObject(id, name, email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(name) {
+function getName(person) {
   /* code here */
-  console.log("Hello my name is {name}");
+  
+ return (`Hello, my name is ${person.name}`);
+
+
 }
 
 /**
@@ -78,8 +81,15 @@ function getName(name) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
-  /* code here */
+function makeSmartPerson(name) {
+ return {name: name,
+speak()  {return `Hello, my name is ${name}`},
+sum(a,b) {
+  return a+b
+
+} 
+}  
+ 
 }
 
 /**
@@ -94,9 +104,11 @@ function makeSmartPerson(/* code here */) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(/* code here */) {
-  /* code here */
-}
+function getCarInfoByIndex(inventory, carIndex) {
+  return `This is a ${inventory[carIndex].car_make} ${inventory[carIndex].car_model}`
+  
+  
+}	
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -109,8 +121,13 @@ function getCarInfoByIndex(/* code here */) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(array) {
+  const getLastCar = getLastItem(array)
+  function getLastItem(array) {
+    const i = array.length - 1;
+    return array[i];
+  }
+  return (`this is a ${getLastCar.car_make} ${getLastCar.car_model}`)
 }
 
 /**
@@ -125,8 +142,12 @@ function getLastCarInfo(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById() {
+  function getCarInfoById(array) {
+    const i = array.length - 1;
+    return array[i];
+  }
+  
 }
 
 /**
